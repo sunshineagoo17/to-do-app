@@ -1,0 +1,21 @@
+.completed {
+  text-decoration: line-through;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  margin-right: 10px;
+}
+
+.destroy {
+  background: none;
+  border: none;
+  color: #cc9a9a;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}

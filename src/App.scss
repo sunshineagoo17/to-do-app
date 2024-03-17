@@ -1,0 +1,79 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.App {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  width: 100%;
+  max-width: 600px;
+
+  header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+}
+
+.filters {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.active {
+      background-color: #ddd;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions .clear-completed, 
+.actions .delete-all {
+  margin-top: 10px;
+  display: block;
+  border: 1px solid #ccc;
+  background-color: black;
+  color: black;
+  cursor: pointer;
+
+  button {
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.active {
+      background-color: #ddd;
+    }
+  
+    &:hover {
+      border: 1px solid black;
+    }
+  }
+}

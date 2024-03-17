@@ -1,0 +1,42 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  .list-item-checkbox {
+    margin-right: 10px;
+  }
+
+  .list-item-text {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .list-item-remove {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #c0392b;
+    }
+  }
+}
