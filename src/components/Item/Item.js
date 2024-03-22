@@ -1,4 +1,3 @@
-import React from 'react';
 import './Item.scss';
 
 function Item({ text, completed, onToggle, onRemove }) {

@@ -1,14 +1,17 @@
-import React from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import './List.scss';
 
 const List = ({ todos, onToggleTodo, onRemoveTodo }) => {
   return (
-    <Droppable droppableId="todos">
-      {(provided) => (
-        <ul className="list" {...provided.droppableProps} ref={provided.innerRef}>
+    <Droppable droppableId="todos-droppable">
+      {(provided, snapshot) => (
+        <ul
+          className={`list ${snapshot.isDraggingOver ? 'is-dragging-over' : ''}`}
+          {...provided.droppableProps}
+          ref={provided.innerRef}
+        >
           {todos.map((todo, index) => (
-            <Draggable key={todo.id} draggableId={String(todo.id)} index={index}>
+            <Draggable key={todo.id} draggableId={todo.id} index={index}>
               {(provided, snapshot) => (
                 <li
                   ref={provided.innerRef}
