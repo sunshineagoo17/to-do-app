@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Input from "./components/Input/Input";
 import List from './components/List/List'; 
 import './App.scss';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = sessionStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  });
   const [filter, setFilter] = useState('all');
 
   const addTodo = (text) => {
@@ -49,10 +52,14 @@ function App() {
   // Calculate the number of active todos
   const activeTodosCount = todos.filter(todo => !todo.completed).length;
 
+  useEffect(() => {
+    sessionStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="app">
-        <h1>Todo List React</h1>
+        <h1>To-Do List</h1>
         <p>{activeTodosCount} item{activeTodosCount !== 1 ? 's' : ''} left</p>
         <Input onAddTodo={addTodo} />
         <List todos={filteredTodos} onToggleTodo={toggleTodo} onRemoveTodo={removeTodo} />
