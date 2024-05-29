@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Input.scss'; 
+import './Input.scss';
 
 const Input = ({ onAddTodo }) => {
   const [text, setText] = useState('');
@@ -18,7 +18,7 @@ const Input = ({ onAddTodo }) => {
   return (
     <input
       type="text"
-      className="input" 
+      className="input"
       placeholder="What needs to be done?"
       value={text}
       onChange={handleChange}

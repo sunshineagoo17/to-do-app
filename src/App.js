@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Input from "./components/Input/Input";
-import List from './components/List/List'; 
+import List from './components/List/List';
 import './App.scss';
 
 function App() {
